@@ -1,0 +1,58 @@
+default:
+  image: node:16
+  tags:
+    - docker
+stages:
+  # - e2e_test
+  - build
+  - review
+
+variables:
+  YARN_CACHE_DIR: '$CI_PROJECT_DIR/cache/yarn'
+  CYPRESS_CACHE_FOLDER: '$CI_PROJECT_DIR/cache/Cypress'
+
+before_script:
+  # https://docs.gitlab.com/ce/ci/ssh_keys/README.html
+  - apt-get update
+  - apt-get -y install openssh-client rsync
+  - apt-get -y install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
+  - eval $(ssh-agent -s)
+  - echo "$SSH_PRIVATE_KEY"|ssh-add -
+  - mkdir -p ~/.ssh
+  - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+
+cache:
+  - key:
+      files:
+        - yarn.lock
+    paths:
+      - $CI_PROJECT_DIR/cache
+      - .yarn
+      - node_modules
+  - key: '$CI_BUILD_REF_NAME'
+    paths:
+      - build
+
+production_build:
+  stage: build
+  environment: development
+  script:
+    - yarn
+    - yarn build
+    - cp -r ./static/ ./build/static/
+    - rsync --delete -pthrvz -e "ssh  -p 5190 " ./build root@172.16.221.191:/usr/share/nginx/dashboard-ui
+    - rsync --delete -pthrvz -e "ssh  -p 5190 " ./build root@172.16.221.191:/usr/share/nginx/dashboards-ui-mf
+  only:
+    - tags
+
+staging_build:
+  stage: build
+  environment: development
+  script:
+    - yarn
+    - yarn build
+    - cp -r ./static/ ./build/static/
+    - rsync --delete -pthrvz -e "ssh  -p 5190 " ./build root@173.16.52.33:/usr/share/nginx/dashboards-ui
+    - rsync --delete -pthrvz -e "ssh  -p 5190 " ./build root@173.16.52.33:/usr/share/nginx/dashboards-ui-mf
+  only:
+    - master

@@ -1,0 +1,15 @@
+.sqlEditor {
+  ::-webkit-scrollbar-thumb {
+    background: #a6a7aed6;
+    border-radius: 12px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgb(235 235 241);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+}

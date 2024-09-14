@@ -1,0 +1,37 @@
+{
+  "x_axis": "name",
+  "y_axis": "price",
+  "bar_chart": {
+    "direction": "horizontal"
+  },
+  "metrics_field": "no_of_reviews",
+  "table_conf": {
+    "price": {
+      "data_type": "number",
+      "column_name": "Sale Price",
+      "decimal_places": 2,
+      "prefix": "$",
+      "suffix": ""
+    },
+    "time_created": {
+      "data_type": "date",
+      "format": "YYYY/MM/DD",
+      "column_name": "Time Created"
+    },
+    "name": {
+      "data_type": "text",
+      "column_name": "Product Name"
+    },
+    "image_primary": {
+      "data_type": "image",
+      "column_name": "Product Image"
+    },
+    "rating": {
+      "data_type": "rating"
+    },
+    "product_id": {
+      "data_type": "link",
+      "href": ""
+    }
+  }
+}

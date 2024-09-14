@@ -1,0 +1,94 @@
+.scrollableContainer {
+  .ant-table-body {
+    scrollbar-width: auto !important;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsla(233, 5%, 67%, 0.839);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgb(235 235 241);
+  }
+}
+
+.tableEditIcon:hover {
+  path {
+    stroke: #5298f9 !important;
+  }
+}
+// Listing page styles
+.dashboard-names {
+  color: rgba(0, 0, 0, 0.88);
+  &:hover {
+    color: rgba(0, 0, 0, 0.88);
+    text-decoration: underline;
+  }
+}
+
+// preview page styles
+
+.previewDashboard {
+  .DashTitleBg {
+    background: white;
+    margin: 0px -44px 20px; // only adding this because content in App.tsx has a padding of 44px
+    padding: 0 44px;
+    .DashTitle {
+      font-family: 'Lexend Deca', sans-serif;
+      padding: 15px 10px;
+      margin: 0;
+      font-size: 40px;
+      font-weight: 500;
+      letter-spacing: -2.1px;
+    }
+  }
+
+  .react-grid-layout {
+    background-image: none !important;
+    border-radius: 3px;
+  }
+  .react-grid-item > .react-resizable-handle {
+    display: none;
+  }
+  .ant-select-selector,
+  .ant-picker {
+    height: 32px;
+    border: none !important;
+    box-shadow: 0 0 2px rgb(169 181 194 / 76%);
+    .ant-select-selection-item,
+    .ant-picker-input input {
+      color: rgba(133, 133, 134, 0.9) !important;
+      font-weight: 500 !important;
+    }
+  }
+  .react-grid-item {
+    // box-shadow: 0 0 1px rgb(169 181 194 / 56%);
+    border-radius: 3px !important;
+  }
+}
+
+.overflowHide {
+  overflow: hidden;
+}
+.gridItemContainer {
+  position: relative;
+  .isClosable {
+    display: none;
+  }
+  &:hover .isClosable {
+    display: block;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    cursor: pointer;
+  }
+}
+.negativeMargin {
+  margin: -8px !important;
+}

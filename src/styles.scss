@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500&display=swap');
+@import 'antd/dist/antd.css';
+$primary-color: white;
+$bg: black;
+html {
+  height: 100%;
+  overflow-y: hidden;
+}
+body {
+  margin: 0px;
+  min-height: 100%;
+  background: #f0f2f8;
+  font-family: 'Lexend Deca', sans-serif;
+  overflow-y: hidden;
+}
+#root {
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 20px;
+}
+
+// Set `scrollableContainer` as className to containers which require default scrollbar to be visible without any additional efforts
+:not(.scrollableContainer)::-webkit-scrollbar {
+  width: 1px;
+}
+
+* {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none;
+}
+
+// Helper style classnames
+.cursor-pointer {
+  cursor: pointer;
+}
+// margin
+.m-0 {
+  margin: 0;
+}
+
+.m-5 {
+  margin: 5px;
+}
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+.mr-5 {
+  margin-right: 5px;
+}
+
+.ml-5 {
+  margin-left: 5px;
+}
+
+.m-10 {
+  margin: 10px;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-12 {
+  margin-top: 12px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+// Typography helpers
+.text-gray {
+  color: #5b656a;
+}
+
+.text-black {
+  color: rgba(35, 40, 44, 0.9) !important;
+}
+// Grid Layout and widgets custom styles
+
+.react-grid-layout {
+  position: relative;
+  transition: height 200ms ease;
+}
+
+.react-grid-item {
+  transition: all 100ms ease;
+  transition-property: left, top;
+  padding: 0.65rem;
+  overflow: hidden !important;
+  position: relative;
+}
+
+.react-grid-item.react-draggable.cssTransforms.react-resizable:hover::after {
+  content: '';
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  position: absolute;
+  border: 2.25px solid #878ddc;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 3px;
+  pointer-events: none;
+  cursor: move;
+}
+
+.react-grid-item > .react-resizable-handle {
+  position: absolute;
+  z-index: 123;
+  width: 20px;
+  height: 20px;
+  bottom: 8px;
+  right: 6px;
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pg08IS0tIEdlbmVyYXRvcjogQWRvYmUgRmlyZXdvcmtzIENTNiwgRXhwb3J0IFNWRyBFeHRlbnNpb24gYnkgQWFyb24gQmVhbGwgKGh0dHA6Ly9maXJld29ya3MuYWJlYWxsLmNvbSkgLiBWZXJzaW9uOiAwLjYuMSAgLS0+DTwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DTxzdmcgaWQ9IlVudGl0bGVkLVBhZ2UlMjAxIiB2aWV3Qm94PSIwIDAgNiA2IiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjojZmZmZmZmMDAiIHZlcnNpb249IjEuMSINCXhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbDpzcGFjZT0icHJlc2VydmUiDQl4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjZweCIgaGVpZ2h0PSI2cHgiDT4NCTxnIG9wYWNpdHk9IjAuMzAyIj4NCQk8cGF0aCBkPSJNIDYgNiBMIDAgNiBMIDAgNC4yIEwgNCA0LjIgTCA0LjIgNC4yIEwgNC4yIDAgTCA2IDAgTCA2IDYgTCA2IDYgWiIgZmlsbD0iIzAwMDAwMCIvPg0JPC9nPg08L3N2Zz4=');
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: nwse-resize !important;
+}
+
+.statsWidget .ant-statistic .ant-statistic-content {
+  font-size: 30px;
+  font-weight: 500;
+  font-family: 'Lexend Deca', sans-serif;
+  color: #263238;
+}
+
+.statsWidget .ant-statistic .ant-statistic-title {
+  font-size: 20px !important;
+  letter-spacing: -0.2px;
+  margin: 0;
+  font-weight: 300;
+  font-family: 'Lexend Deca', sans-serif;
+  color: #5a5e7c;
+}
+
+.statsWidget {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+.cardTitle {
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.2px;
+  margin: 0 0 16px 0;
+  color: #263238;
+}
+
+.spinContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+// .apexcharts-title-text {
+//   margin-top: 0;
+//   margin-bottom: 0.5em;
+//   color: rgba(0, 0, 0, 0.85);
+//   font-weight: 500;
+//   font-size: 20px;
+// }
+
+.btn-bg-success.ant-btn-primary {
+  background-color: hsl(110, 43%, 40%);
+  border-color: hsl(110, 43%, 40%);
+  &:hover {
+    background-color: hsl(110, 43%, 45%);
+    border-color: hsl(110, 43%, 45%);
+  }
+}
+
+.ace_gutter {
+  z-index: 0 !important;
+}

@@ -1,0 +1,65 @@
+.createNewButton,
+.widgetsCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .ant-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  &:hover {
+    transform: scale(1.025);
+    box-shadow: 1px solid #d2ddec;
+  }
+  svg {
+    height: 18px;
+    width: 18px;
+    line-height: 18px;
+    font-size: 18px;
+  }
+}
+.createNewButton {
+  border: 1px solid #1677ff;
+}
+.upsert-dashboard-layout {
+  background: #fff;
+  padding: 1.5rem 2rem;
+  box-shadow: rgba(203, 202, 202, 0.2) 0px 10px 24px;
+  border-top: 1px solid rgba(220, 218, 218, 0.144);
+  .select-widgets-sider {
+    border: 1px solid #f6f6f6;
+    margin-top: 3.5rem;
+    padding: 0.5rem 0.5rem 3rem 0;
+    border-radius: 4px;
+    height: 75vh;
+    overflow: scroll;
+    .ant-layout-sider-trigger {
+      position: absolute !important;
+      background: transparent;
+      .anticon {
+        border: 1px solid #d2ddec;
+        padding: 4px;
+        border-radius: 5px;
+        margin-left: 7px;
+      }
+    }
+  }
+  // overright antd input and select styles
+  .ant-select-selector,
+  .ant-picker {
+    height: 32px;
+    border: none !important;
+    box-shadow: 0 0 2px rgb(169 181 194 / 76%);
+    .ant-select-selection-item,
+    .ant-picker-input input {
+      color: rgba(133, 133, 134, 0.9) !important;
+      font-weight: 500 !important;
+    }
+  }
+}
+.ant-layout {
+  background: #ffffff;
+}
